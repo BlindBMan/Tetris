@@ -32,3 +32,21 @@ class Game(db.Model):
 
     def __repr__(self):
         return 'Game for user {} with score {}'.format(self.user_id, self.score)
+
+
+class Challenge(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
+    first_player_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    second_player_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    winner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    game_id = db.Column(db.Integer, db.ForeignKey('game.id'), nullable=False)
+
+    first_player = db.relationship('User', backref=db.backref('first_pl', uselist=False),
+                                   foreign_keys=[first_player_id])
+    second_player = db.relationship('User', backref=db.backref('second_pl', uselist=False),
+                                   foreign_keys=[second_player_id])
+    winner = db.relationship('User', backref=db.backref('winner_player', uselist=False),
+                                   foreign_keys=[winner_id])
+    game = db.relationship('Game', backref=db.backref('game', uselist=False),
+                                   foreign_keys=[game_id])
