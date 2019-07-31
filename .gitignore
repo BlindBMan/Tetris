@@ -21,3 +21,7 @@ Tetris/tetris.db
 .idea/dataSources/4fdb2c73-1ce0-4cbb-bbc9-564224aafc5d/_metadata_/metadata_i.len
 .idea/workspace.xml
 .idea/workspace.xml
+migrations/versions/299021dfaafd_um.py
+migrations/versions/__pycache__/299021dfaafd_um.cpython-37.pyc
+.idea/dataSources/4fdb2c73-1ce0-4cbb-bbc9-564224aafc5d/_metadata_/metadata.values.at
+.idea/workspace.xml
