@@ -1,0 +1,9 @@
+/* Errors */
+	.error {
+		color: red;
+		font-style: italic;
+	}
+
+.form-field {
+	border: none;
+}

@@ -49,5 +49,6 @@ Tetris/static/fonts/fontawesome-webfont.woff
 Tetris/static/fonts/fontawesome-webfont.ttf
 Tetris/static/fonts/fontawesome-webfont.svg
 Tetris/static/fonts/fontawesome-webfont.eot
-Tetris/static/css/main.css
 Tetris/static/css/font-awesome.min.css
+Tetris/templates/base.html
+*.pyc
