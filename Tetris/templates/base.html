@@ -5,28 +5,32 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+{% block head %}
 	<head>
-		<title>Introspect by TEMPLATED</title>
+		<title>Tetris</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 	</head>
+{% endblock %}
 	<body>
 
-		<!-- Header -->
+		{% block header %}
 			<header id="header">
 				<div class="inner">
-					<a href="index.html" class="logo">introspect</a>
+					<a href="{{ url_for('index') }}" class="logo">introspect</a>
 					<nav id="nav">
-						<a href="index.html">Home</a>
-						<a href="generic.html">Generic</a>
-						<a href="elements.html">Elements</a>
+						<a href="{{ url_for('index') }}">Home</a>
+						<a href="{{ url_for('signup') }}">Sign up</a>
+						<a href="{{ url_for('login') }}">Log in</a>
+                        <a href="{{ url_for('play') }}">Play</a>
 					</nav>
 				</div>
 			</header>
+        {% endblock %}
 			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
-		<!-- Banner -->
+		{% block banner %}
 			<section id="banner">
 				<div class="inner">
 					<h1>Introspect: <span>A free + fully responsive<br />
@@ -36,8 +40,9 @@
 					</ul>
 				</div>
 			</section>
+        {% endblock %}
 
-		<!-- One -->
+		{% block content %}
 			<section id="one">
 				<div class="inner">
 					<header>
@@ -119,8 +124,9 @@
 					</article>
 				</div>
 			</section>
+        {% endblock %}
 
-		<!-- Footer -->
+		{% block footer %}
 			<section id="footer">
 				<div class="inner">
 					<header>
@@ -148,12 +154,14 @@
 					</div>
 				</div>
 			</section>
+        {% endblock %}
 
-		<!-- Scripts -->
+		{% block scripts %}
 			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
 			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        {% endblock %}
 
 	</body>
 </html>
