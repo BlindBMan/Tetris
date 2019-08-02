@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% from 'form_macros.html' import render_field %}
+{% block head %}
+    <title>Sign up</title>
+    {{ super() }}
+{% endblock %}
+
+{% block banner %}
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>Please sign up</h1>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <table>
+                {{ render_field(form.username, size=50) }}
+                {{ render_field(form.password, size=50) }}
+                {{ render_field(form.password2, size=50) }}
+                {{ render_field(form.email, size=50) }}
+
+                <tr class="submit form-field">
+                    <td></td>
+                    <td> <button type="submit">Submit</button> </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+{% endblock %}
+

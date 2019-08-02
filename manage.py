@@ -12,7 +12,9 @@ manager.add_command('db', MigrateCommand)
 def insert_data():
     sam = User(username='Sam', email='sam@gmail.com', password='test')
     suzzy = User(username='Suzzy', email='suzzy@gmail.com', password='test')
+
     db.session.add(sam)
+    db.session.add(suzzy)
     db.session.add(Game(score=20, user=sam))
     db.session.add(Game(score=500, user=suzzy))
     db.session.commit()
