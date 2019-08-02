@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ user.username }}</title>
+    {{ super() }}
+{% endblock %}
+
+{% block banner %}
+{% endblock %}
+
+{% block content %}
+    <h1>Games</h1>
+    {% if user.games.count() > 0 %}
+        <ul>
+        {% with games = user.games %}
+            {% for game in games %}
+                <li>Game no. {{ game.id }} with score {{ game.score }}</li>
+            {% endfor %}
+        {% endwith %}
+        </ul>
+    {% else %}
+        No games yet
+    {% endif %}
+{% endblock %}
