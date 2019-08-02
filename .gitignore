@@ -54,3 +54,5 @@ Tetris/templates/base.html
 *.pyc
 Tetris/static/css/main.css
 Tetris/static/css/main.css
+.idea/workspace.xml
+migrations/versions/30784d398f19_init2.py

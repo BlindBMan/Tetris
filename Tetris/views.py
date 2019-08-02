@@ -57,4 +57,5 @@ def logout():
 
 @app.route('/user/<username>')
 def user(username):
-    pass
+    user = User.query.filter_by(username=username).first_or_404()
+    return render_template('user.html', user=user)
