@@ -22,7 +22,6 @@ login_manager.init_app(app)
 
 # enable debug toolbar
 toolbar = DebugToolbarExtension(app)
-app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 import Tetris.models
 import Tetris.views
