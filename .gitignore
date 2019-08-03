@@ -56,3 +56,11 @@ Tetris/static/css/main.css
 Tetris/static/css/main.css
 .idea/workspace.xml
 migrations/versions/30784d398f19_init2.py
+Tetris/static/img/sprites/background.jpg
+Tetris/static/img/sprites/I.png
+Tetris/static/img/sprites/L.png
+Tetris/static/img/sprites/R.png
+Tetris/static/img/sprites/S.png
+Tetris/static/img/sprites/T.png
+.idea/workspace.xml
+Tetris/static/js/phaser-arcade-physics.js

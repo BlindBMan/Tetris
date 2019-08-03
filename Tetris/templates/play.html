@@ -2,6 +2,8 @@
 
 {% block head %}
     <title>Play</title>
+    <script src="{{ url_for('static', filename='js/phaser-arcade-physics.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
     {{ super() }}
 {% endblock %}
 
@@ -9,9 +11,8 @@
 {% endblock %}
 
 {% block content %}
-    <canvas width="500" height="500">
 
-    </canvas>
+
 {% endblock %}
 
 {% block footer %}
