@@ -2,51 +2,70 @@
 * Created by gusti on 8/2/2019.
 */
 
+const LEFTBOUNDY = 90,
+      LEFTBOUNDX = 12,
+      RIGHTBOUNDX = 426,
+      RIGHTBOUNDY = 650;
+
 var config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: 590,
+    height: 650,
     physics: {
         default: 'arcade',
         arcade: {
             gravity: { y: 200 }
         }
-    },
+    },  
     scene: {
         preload: preload,
-        create: create
+        create: create,
+        update: update
     }
 };
 
 var game = new Phaser.Game(config);
+game.scale.pageAlignHorizontally = true;
 
-function preload ()
-{
-    this.load.setBaseURL('http://labs.phaser.io');
+var block;
 
-    this.load.image('sky', 'assets/skies/space3.png');
-    this.load.image('logo', 'assets/sprites/phaser3-logo.png');
-    this.load.image('red', 'assets/particles/red.png');
+function preload () {
+
+    this.load.image('background', './static/img/sprites/background.jpg');
+    this.load.image('letter_i', './static/img/sprites/I.png');
+    this.load.image('letter_L', './static/img/sprites/L.png');
+    this.load.image('letter_R', './static/img/sprites/R.png');
+    this.load.image('letter_S', './static/img/sprites/S.png');
+    this.load.image('letter_T', './static/img/sprites/T.png');
+    
 }
 
-function create ()
-{
-    this.add.image(400, 300, 'sky');
-
-    var particles = this.add.particles('red');
-
-    var emitter = particles.createEmitter({
-        speed: 100,
-        scale: { start: 1, end: 0 },
-        blendMode: 'ADD'
-    });
-
-    var logo = this.physics.add.image(400, 100, 'logo');
-
-    logo.setVelocity(100, 200);
-    logo.setBounce(1, 1);
-    logo.setCollideWorldBounds(true);
-
-    emitter.startFollow(logo);
+function create () {
     
+
+    this.add.image(295, 325, 'background');
+
+    block = this.physics.add.sprite(295, 120, 'letter_i');
+    block.displayHeight = 104;
+    block.displayWidth = 104;
+    block.setCollideWorldBounds(true);
+
+    
+
+}
+
+function update() {
+    
+    let cursors = this.input.keyboard.createCursorKeys();
+
+    if (Phaser.Input.Keyboard.JustDown(cursors.left)) {
+        block.x -= 20;
+    } else if (Phaser.Input.Keyboard.JustDown(cursors.right)) {
+        block.x += 20;
+    } else if (Phaser.Input.Keyboard.JustDown(cursors.up)) {
+        block.angle += 90;
+    } else if (Phaser.Input.Keyboard.JustDown(cursors.down)) {
+        block.y += 20;
+    }
+
 }
