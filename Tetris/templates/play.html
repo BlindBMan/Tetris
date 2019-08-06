@@ -2,7 +2,13 @@
 
 {% block head %}
     <title>Play</title>
-    <script src="{{ url_for('static', filename='js/phaser.js') }}"></script>
+{#    <script src="{{ url_for('static', filename='js/phaser.js') }}"></script>#}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser-ce/2.11.0/phaser.min.js"></script>
+    <script src="{{ url_for('static', filename='js/playState.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/singleplayerState.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/menuState.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/load.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gameoverState.js') }}"></script>
     <script src="{{ url_for('static', filename='js/game.js') }}"></script>
     {{ super() }}
 {% endblock %}
@@ -11,7 +17,7 @@
 {% endblock %}
 
 {% block content %}
-
+    <div class="gameDiv"></div>
 
 {% endblock %}
 
