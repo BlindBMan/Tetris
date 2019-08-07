@@ -1729,3 +1729,7 @@ Tetris/static/js/src/actions/Call.js
 Tetris/static/js/src/actions/Angle.js
 Tetris/static/js/phaser.js
 .idea/workspace.xml
+Tetris/static/img/sprites/big_button.jpg
+Tetris/static/img/sprites/menu_background.jpg
+Tetris/static/img/sprites/play_btn.png
+.idea/workspace.xml
