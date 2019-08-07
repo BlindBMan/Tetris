@@ -15,6 +15,8 @@ var config = {
 
 var game = new Phaser.Game(590, 650, Phaser.AUTO, 'gameDiv');
 
+var cursors;
+
 game.state.add('load', loadState);
 game.state.add('menu', menuState);
 game.state.add('play', playState);
